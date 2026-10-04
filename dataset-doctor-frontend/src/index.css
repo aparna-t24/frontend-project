@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #060a10;
+  color: #e6f3f0;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(20, 160, 133, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(45, 212, 191, 0.10), transparent 40%),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+@layer components {
+  .glass-card {
+    @apply relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-card;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-clinic-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-clinic-400 px-6 py-3 text-sm font-semibold text-ink-950 shadow-glow transition hover:bg-clinic-300 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 active:scale-[0.98];
+  }
+
+  .section-label {
+    @apply mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-clinic-300;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 212, 191, 0.25);
+  border-radius: 999px;
+}
